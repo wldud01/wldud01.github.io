@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language-javascript</title>
+    <style>
+        h3{
+            background-color: beige;
+        }
+    </style>
 </head>
 <body>
     <h1>Javascript</h1>
+    <hr>
     <div class ="before">
         <header class ="before_title"><h2>들어가기전...</h2></header>
             <p>This content provide javascript grammer</p>
@@ -76,58 +82,140 @@
         
             <div class ="basic_datatype">
                 <h3>데이터 유형</h3>
-                <pre>
-                    Javascript의 값은 8가지 유형이 있다.
-                    숫자 
-                    - 곱하기, 더하기, 나누기, 빼기 Infinity
-                    - 큰 정수값은 정확도가 떨어진다. 고정된 6비트 저장소에 맞지 않으면 오류가 발생한다.
-                    - 최근에 BigInt type은 임의 길이의 정수를 나탄기 위해 최근에 언어가 추가되었다.
+                <p>
+                    Javascript의 값은 8가지 유형이 있다.<br>
+                    <strong>숫자</strong> <br>
+                    - 곱하기, 더하기, 나누기, 빼기 Infinity<br>
+                    - 큰 정수값은 정확도가 떨어진다. 고정된 6비트 저장소에 맞지 않으면 오류가 발생한다.<br>
+                    - 최근에 BigInt type은 임의 길이의 정수를 나탄기 위해 최근에 언어가 추가되었다.<br>
+                    <br>
 
-                    string
-                    - 문자열은 따옴표로 묶어야한다.
-                    - 큰따옴표, 작은 따옴표, 백틱이 있다. " " ' ' 
-                    - 백틱은 확장된 기능 인용 부호 이다. 변수와 표현식을 래핑하여 문자열에 embed할 수 있다.
+                    <strong>문자열</strong><br>
+                    - 문자열은 따옴표로 묶어야한다.<br>
+                    - 큰따옴표, 작은 따옴표, 백틱이 있다. " " ' ' <br>
+                    - 백틱은 확장된 기능 인용 부호 이다. 변수와 표현식을 래핑하여 문자열에 embed할 수 있다.<br><br>
 
-                    boolean(논리 유형)
-                    - 부울 유형에는 true,false가 있다.
+                    <strong>boolean(논리 유형)</strong><br>
+                    - 부울 유형에는 true,false가 있다.<br><br>
 
-                    Null 값
-                    - null은 존재하지 않는 객체에 대한 참조 또는 널 포인터가 아니다. 
-                    - null은 javascript에서 업음, 비어있음을 나타내는 뜻일 뿐이다.
-                    - 즉 단일 값을 갖는 독립 실행형 유형이다.
+                    <strong>Null 값</strong><br>
+                    - null은 존재하지 않는 객체에 대한 참조 또는 널 포인터가 아니다.<br> 
+                    - null은 javascript에서 업음, 비어있음(0)을 나타내는 뜻일 뿐이다.<br>
+                    - 즉 단일 값을 갖는 독립 실행형 유형이다.<br><br>
 
-                    undefined 값
-                    - 값이 할당되지 않음을 나타낸다.
-                    - 선언되었지만 할당되지 않은 경우
-                    - 일반적으로는 권장하지 않는다.
+                    <strong>undefined 값</strong><br>
+                    - 값이 할당되지 않음을 나타낸다.<br>
+                    - 선언되었지만 할당되지 않은 경우<br>
+                    - 값이 0을 의미하지 않고 NaN을 의미<br>
+                    - 일반적으로는 권장하지 않는다.<br><br>
                     
-                    개체 및 기호
-                    - object유형은 특별하다. 객체는 데이터 컬렉션과 더 복잡한 entity를 저장하는데 사용된다.
+                    <strong>개체 및 기호</strong><br>
+                    - object유형은 특별하다. 객체는 데이터 컬렉션과 더 복잡한 entity를 저장하는데 사용된다.<br><br>
 
-                    typeof 연산자와
-                    - typeof 연산자는 피연산자의 유형을 반환한다. 
-                    - 다른 유형의 값을 다르게 처리하거나 빠른 확인을 원할 대 유용하다.
-                    - typeof는 함수가 아니라 연산자이다. 원래 typeof(X)이지만, 여기 괄호가 함수의 괄호가 아니다.
-
-                </pre>
+                    <strong>typeof 연산자와</strong><br>
+                    - typeof 연산자는 피연산자의 유형을 반환한다.<br> 
+                    - 다른 유형의 값을 다르게 처리하거나 빠른 확인을 원할 대 유용하다.<br>
+                    - typeof는 함수가 아니라 연산자이다. 원래 typeof(X)이지만, 여기 괄호가 함수의 괄호가 아니다.<br>
+                </p>
             </div>
             <div class ="interactive">
                 <header><h3>interactive - 경고, prompt, 확인</h3></header>
-                <pre>
-                    1. alert
-                        모달창을 통해서 방문자가 창을 처리할 때까지 페이지의 나머지 부분과 상호작용하거나 다음 버튼으 누르는 작업을 할 수 없음
+                <p>
+                    <strong>1. alert</strong><br>
+                        모달창을 통해서 방문자가 창을 처리할 때까지 페이지의 나머지 부분과 상호작용하거나 다음 버튼으 누르는 작업을 할 수 없음<br><br>
                     
-                    2.prompt   
-                        두가지 인수를 허용한다.
-                        텍스트 메시지 방문자를 위한 입력 필드 확인 취소 버튼이 있는 모달창을 보여준다.
-                        prompt(title,[default])에서 title은 방문자에게 표시할 텍스트 default는 매개변수, 입력 필드 초기값
-                        []부분은 선택사항이나 값이 없는 경우, undefined를 삽입해주는 것이 좋다.
+                    <strong>2.prompt</strong><br>   
+                        두가지 인수를 허용한다.<br>
+                        텍스트 메시지 방문자를 위한 입력 필드 확인 취소 버튼이 있는 모달창을 보여준다.<br>
+                        prompt(title,[default])에서 title은 방문자에게 표시할 텍스트 default는 매개변수, 입력 필드 초기값<br>
+                        []부분은 선택사항이나 값이 없는 경우, undefined를 삽입해주는 것이 좋다.<br><br>
                     
-                    3.confirm
-                        이 함수는 확인 및 취소라는 두개의 버튼이 있는 모달창을 보여준다.
-                        결과는 true이거나 false인 것이다.
-                </pre>
-                <ㅗ
+                    <strong>3.confirm</strong><br>
+                        이 함수는 확인 및 취소라는 두개의 버튼이 있는 모달창을 보여준다.<br>
+                        결과는 true이거나 false인 것이다. <br>
+                </p>
+            </div>
+            <div class ="type transform">
+                <header><h3>유형 변환</h3></header>
+                <p>
+                    <strong>1. 문자열 변환</strong><br>
+                        문자열 형식이 필요할 때 발생. string(value)값을 문자열로 반환하는 함수를 호출할 수 있다.<br><br>
+                    
+                    <strong>2. 숫자 변환</strong><br>
+                        수학 함수 및 표현식의 숫자 변환은 자동적으로 발생한다.<br>
+                        예를 들어 나눗셈이 /이 숫자가 아닌 것에 적용되는 경우<br>
+                        문자 타입인 숫자를 나눗셈했을 때 자동 변환 된다.<br>
+                        Number("123z") 에러가 발생한다.<br><br>
+                    
+                    <strong>3. bool 변환</strong><br>
+                        일단, 비어있는 값들은 모두 false 처리가 된다.<br>
+                        다른 값은 true이거나<br>
+                        alert("hello"); -> true<br>
+                        alert(""); -> false 스페이스로 공간이 있으면 true가 됩니다.<br>
+                        undefined는 NaN이 아니라 0이다.<br>
+                </p>
+            </div>
+            <div class ="basic operator, math">
+                <header><h3>기본 연산자, 수학</h3></header>
+                <p>
+                    <strong>1. 단항, 이항, 피연산자</strong><br>
+                        피연산자는 - 연산자가 적용되는 대상<br>
+                        연산자는 우리가 아는 연산자<br>
+                        피연산자가 하나이면 단항 let x =1;<br>
+                        두개있으면 이진<br><br>
+
+                    
+                    <strong>2. 문자열 연결</strong><br>
+                        Binary 연산자가 문자열에 적용되면 문자열을 연결한다<br>
+                        만약 피연산자 하나가 문자열이면 다른 피연산자도 문자열이 된다<br>
+                        alert('1'+2) -> output: "12"<br>
+                        더해지는 것이 아니라 붙여진다. 그런데 문자열을 지원하는 유일한 연산자는 +이다<br>
+                        - 같은 경우에는 문자인 숫자를 숫자로 변환하여 계산된다.<br><br>
+                    
+                    <strong>3. 숫자 변환, 단항</strong><br>
+                        앞에 +를 붙이면 Number(value)랑 같은 역할을 한다.<br>
+                        let apples = "2"<br>
+                        alert(+apples); -> output: 숫자 2가 출력됨 <br><br>
+            
+                    <strong>4. =</strong><br>
+                        값을 할당할 때 사용하지만 좀 더 복잡하게 사용가능<br>
+                        let c = 3 -(a = b+1); <br>
+                        a = b = c = 2+2;<br><br>
+                    
+                    <strong>5. 비트 연산자</strong><br>
+                        <li>그리고 &</li>
+                        <li>또는 |</li>
+                        <li>XOR ^</li>
+                        <li>아님 ~</li>
+                        <li> 오른쪽 시프트 >> </li><br>
+
+                    <strong>6. 반점</strong><br>
+                        쉼표 연산자는 가장 희귀하고 특이한 연산자이다.<br>
+                        쉼표 연산자를 사용하면 여러 표현식을 쉼표로 나누어 평가할 수 있다.<br>
+                        let a = (1+2, 3+4);<br>
+                        alert(a); // result가 7이 된다.<br>
+                        여기서 앞에 식이 평가되고 버려진다고 생가하면 된다.<br><br>
+
+                    <strong>7. 비교</strong><br>
+                        두 문자열은 사전 순서로 비교한다.<br>
+                        두 문자열이 같은 길이로 끝나면 길이가 긴 문자열이 더 크다.<br>
+                        같은 문자의 대소문자 비교에서는 소문자가 내부 인코딩 테이블에서 더 큰 인덱스를 갖기 때문에 더 크다.<br>
+                        엄격한 같음 연산자를 사용하고 싶은 경우에는 === 를 사용함.<br>
+                        수학적으로 null==0은 아니지만 null >=0은 true 이다.<br>
+                        <pre style="white-space: pre-line;"><i>
+                            5 > 4 → true
+                            "apple" > "pineapple" → false
+                            "2" > "12" → true // 사전 비교이기 때문에 첫번째 char을 비교하면 2가 크다.
+                            undefined == null → true
+                            undefined === null → false
+                            null == "\n0\n" → false typeof string
+                            null === +"\n0\n" → false typeof number 0</i>
+                        </pre>
+
+                        
+
+                       
+                </p>
             </div>
     </div>
 
