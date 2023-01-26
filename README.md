@@ -1,15 +1,12 @@
 <h1>Place for study<h1>
 <hr/>
 
+- Front-end
+- Back-end
+- Network
+- Data Analyst
+- Clone coding
 
-<ul>
-    - Front-end
-    - Back-end
-    - Network
-    - Data Analyst
-    - Clone coding
-
-</ul>
 
 <h2>Language</h2>
 <ul>
