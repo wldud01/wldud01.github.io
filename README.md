@@ -1,6 +1,7 @@
-<h1>Place for study<h1>
+<h1>Place for study</h1>
 <hr/>
 
+    
 - Front-end
 - Back-end
 - Network
