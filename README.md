@@ -16,7 +16,7 @@
     HTML
     CSS
     Javascript
-    Javascript
+    Typescript
     Kotlion
     MySQL
 
