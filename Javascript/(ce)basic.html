@@ -9,13 +9,16 @@
         h3{
             background-color: beige;
         }
+        pre{
+            white-space: pre-line;
+        }
     </style>
 </head>
 <body>
     <h1>Javascript</h1>
     <hr>
     <div class ="before">
-        <header class ="before_title"><h2>들어가기전...</h2></header>
+        <header class ="before_title"></header>
             <p>This content provide javascript grammer</p>
             <h3>javascript는 어떤 언어인가</h3>
             <p> 
@@ -211,37 +214,78 @@
                             null == "\n0\n" → false typeof string
                             null === +"\n0\n" → false typeof number 0</i>
                         </pre>
-
-                        
-
-                       
                 </p>
             </div>
     </div>
-
+    <div class = "basic_condition">
     <header><h2>조건문</h2></header>
-        <div><h3>조건문</h3></div>
-    
+        <h3>조건문</h3>
+        <p>
+            물음표 연산자와 if 조건 연산자를 이용한는데, 명령문은 괄호 안의 조건을 평가하고 결과가 true이면 실행한다.
+            let  year = prompt("Your birthday?"); <br>
+            if (year == 2015) alert("true");<br>
+            둘 이상의 명령을 넣을 때엔 괄호로 묶어야 한다.<br>
+            <br>
+            <strong>bool 변환</strong><br>
+            false - 숫자 0, null, "" , undefined, NaN 모두 <br>
+            <br>
+            <strong>else 절</strong><br>
+            else 절은 if 절 이외의 조건에 경우<br>
+        </p>
+        <pre style="white-space: pre-line;">
+            if (year == 15){
+                alert("y");
+            }else if (year > 15) { 
+                alert("f");
+            }else{ 
+                alert("m")
+            }
+            같은 방법으로 ?를 이용하여 표현 가능
+            let result = condition? true 값: false 값;
+            let access = (age>18)? true : false;
+        </pre>
+        <br>
+        <strong>?를 여러개 사용하고 싶은 경우</strong><br>
+        <pre>
+            let age = prompt('age?',8);
+            let message = (age > 3) ? hi :
+            (age >3) ? "hello":
+            age > 100 ? "great":
+            "oop";
+        </pre>
+        <p>
+            위 코드의 흐름을 보면 먼저 첫번째 문장 진위 여부를 판단하고, <br>
+            false이면 다음 문장을 진위여부를 진단하면서 넘어갑니다.<br>
+        </p>
+    </div>
 
-    <header><h2>반복문</h2></header>
-        <div><h3>반복문</h3></div>
+    <div class = "basic_logical">
+        <header><h2>논리 연산자</h2></header>
+            <h3>논리 연산자</h3>
+            <p>
+                OR || - 여러개의 조건은 첫번째 true 값을 찾는다 <br>
+                And && - 첫번째 거짓값을 찾는다.<br>
+                And 연산자는 기본적으로 OR보다 우선순위가 높다<br>
+                a && b || c && d == && (a && b) || ( c && d )<br>
+                let x =1 ; <br>
+                ( x>0 ) && alert("greater"); <br>
+                같은 의미인 문장이<br>
+                if( x>0 ) alert("greater");<br>
+                alert( alert(1) || 2 || alert(3) );<br>
+                alert 먼저 되고 그 다음 2를 반환하는 이유는 alert는 반환하고 나서 true가 아니라 undefined 된다.<br>
+                따라서 다시 true값을 찾아서 나간다.<br>
 
+            </p>
+    </div>
+    <div class = "basic_nullish">
+        <header><h2>병합 연산자</h2></header>
+            <h3>병합 연산자 '??'</h3>
+            <p>
+                null 병합 연산자는 두 개의 물음표로 작성된다.<br>
+                null 병합 연산자는 두 개의 물음표로 작성된다.<br>
 
-    <header><h2>함수</h2></header>
-        <div><h3>함수</h3></div>
-        <div><h3>함수 지향</h3></div>
+            </p>
+    </div>
 
-    <header><h2>배열</h2></header>
-        <div><h3>배열</h3></div>
-
-    <header><h2>객체</h2></header>
-        <div><h3>객체</h3></div>
-        <div><h3>객체지향</h3></div>
-    
-    <header><h2>모듈</h2></header>
-        <div><h3>모듈</h3></div>
-
-    <header><h2>패턴</h2></header>
-        <div><h3>재귀함수</h3></div>
 </body>
 </html>
