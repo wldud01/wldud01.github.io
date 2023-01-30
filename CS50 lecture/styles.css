@@ -75,7 +75,7 @@ main{
 
 .header_nav{
     display: flex;
-    width: 250vh;
+    width: 125vh;
     height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -84,7 +84,7 @@ main{
     display: block;
     width: 100px;
     color: black;
-    padding: 10px 1.5vh;
+    padding: 10px 1.2vh;
     text-align: center;
     font-size: 10pt;
     transition: all 1s ease-in-out;
@@ -94,26 +94,28 @@ main{
 }
 .section{
     width: 98%;
-
-}
-.main_computerThink{
     margin:8px 0px;
     border: 1px solid rgb(190, 190, 190);
     box-shadow: 3px 3px 5px rgb(224, 224, 224);
     border-radius: 5px;
+
 }
+
 .pageTop{
+    display: flex;
+    justify-content: right;
     position: fixed;
-    width: auto;
+    width: 100%;
     height: fit-content;
+    right: 10px;
+    bottom: 10px;
 }
 .pageTop > a {
     display: flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background-color: rgb(238, 238, 55);
+    background-color: rgb(190 217 217);
 }
