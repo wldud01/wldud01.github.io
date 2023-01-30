@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+}
+h3 + pre{
+    margin: 10px 10px;
+    white-space: pre-line;
+    font-size: 10pt;
+    line-height: 20px;
+    letter-spacing: 1pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+h1,h2{
+   padding: 5px 10px; 
+   font-weight: 500;
+
+}
+h3{
+    margin:10px 10px;
+    width: fit-content;
+    border-radius: 5px;
+    background-color: rgb(190 217 217);
+    color: #5a5a5a;
+    padding: 4px 10px;
+}
+
+nav{
+    display: flex;
+    width: auto;
+    height: auto;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(0, 128, 128,0.1);
+}
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-top: 5px;
+
+}
+.header_title{
+    display: flex;
+    width:auto;
+    height: auto;
+    color: teal;
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 5px;
+    padding: 10px 5px;
+    text-align: center;
+    animation: inOut 5s ease-in-out infinite;
+}
+@keyframes inOut {
+    0%{
+        transform: rotateY(0);
+    }
+    50%{
+        transform: rotateY(180deg) translateY(3px);
+        opacity: 0;
+    }
+    100%{
+        transform: rotateY(0);
+    }
+    
+}
+
+.header_nav{
+    display: flex;
+    width: 250vh;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header_nav > a{
+    display: block;
+    width: 100px;
+    color: black;
+    padding: 10px 1.5vh;
+    text-align: center;
+    font-size: 10pt;
+    transition: all 1s ease-in-out;
+}
+.header_nav > a:hover{
+    background-color: rgba(32, 152, 104, 0.2);
+}
+.section{
+    width: 98%;
+
+}
+.main_computerThink{
+    margin:8px 0px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 3px 3px 5px rgb(224, 224, 224);
+    border-radius: 5px;
+}
+.pageTop{
+    position: fixed;
+    width: auto;
+    height: fit-content;
+}
+.pageTop > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(238, 238, 55);
+}
