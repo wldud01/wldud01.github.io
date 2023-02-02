@@ -75,18 +75,18 @@ main{
 
 .header_nav{
     display: flex;
-    width: 125vh;
+    width: 173vh;
     height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .header_nav > a{
     display: block;
-    width: 100px;
+    width: 120px;
     color: black;
     padding: 10px 1.2vh;
     text-align: center;
-    font-size: 10pt;
+    font-size: 8pt;
     transition: all 1s ease-in-out;
 }
 .header_nav > a:hover{
