@@ -26,10 +26,96 @@
     <main>
         <div class = "section main_introdution" id="introdution">
             <head><h2>1. introndution</h2></head>
-            <h3>극대값 찾기</h3>
+            <h3>Imformation</h3>
             <pre>
-                dkssud
+                Imformation - http://coursescail.mit.edu/6.006
+                다루는 내용: 대규모 입력이 필요한 문제들을 해결하기 위한 효율적인 방법
+                Focus on 큰값 -> 효율성
+                - 확장성
+                - classic data structure
+                - Real-  implementation in python
+                어떤게 효율적인지 찾아내고 증명하는 과정 진행
+
+                About 연습문제
+                1. 자료구조의 특정 정렬 알고리즘을 이용 논리 네트워크 시뮬레이션
+                2. 해싱 단원 -> 게놈 비교에 이용
+                3. numeric(거대한 수) -> SSL에서 이용 백엔드에서 RSA가 사용
+                4. 그래프 -> 루빅 큐브 필요한 이동 최소값
+                5. 최단 경로 -> caltech -> MIT 거리
+                6. 동적 프로그래밍 -> 이미지 압축, 픽셀 줄이기
+                7. Advanced topics 
             </pre>
+        
+            <h3>극대값 찾기- 1차원과 2차원의 경우</h3>
+            <pre>
+                <strong>1차원</strong>
+                양수 -> 극대값 찾기 (9자리)
+                a b c d e f g h i 
+                - b가 극대값이라고 한다면
+                b >= a and b >=c
+                즉 극대 값은 지역적인 요소이다.
+                - 가장자리가 극대값이라고 한다면
+                i >= h
+
+                <strong>Q. 극대값이 존재하는 경우에 극대값을 찾아라</strong>
+                존재하는 경우라고 하는 경우라고 하는 이유는 이를 증명해야하기 때문이다.
+                원소 n개 
+                1,2,3,...,n-1,n
+                왼쪽 -> 오른쪽으로 이동하면서 확인
+                중간에 있는 경우 n/2
+                최악의 경우 n
+
+                <strong>어떻게 접근할 수 있을까</strong>
+                이진 탐색을 이용한 접근
+                if a [n/2] < a[n/2-1] 왼쪽 절반만 보기
+                else if a[n/2] < a[n/2+1] 오른쪽 
+                else : 중앙값이  peak
+
+                <strong>More better을 위한 복잡도 접근</strong>
+                살펴본 복잡도 O(n)의 효율을 조금 더 개선하기 위한 알고리즘 접근
+                재귀적 분할 정복 알고리즘에 대응하는 점화식 T(n)
+                T(n) -> 알고리즘이 하는 일의 양 
+                <i>T(n) = T(n/2) + O(1)</i>
+                여기 식에서 O(1)은 왼쪽 오른쪽을 확인하는 시간은 상수 2 이므로 O(1)됨
+                위 식을 전개하면 T(1) = O(1) 원소가 한개인 배열에서는 그 원소를 반환하기 때문이다
+                T(n) = O(1) + ..... + O(1) = O(log2n)
+                n -> 1000만 O(n) -> 13초
+                            O(log2n) -> 0.001초
+                
+                <strong>2차원 배열</strong>
+                행렬 행 n 열 m 
+                극대값 -> 확실한 정의는 극대값 = 언덕
+                a >= b,c,d,e 이면 극대값
+                Greed Ascent Algorithm -> 방향을 따라 극대값을 찾음
+                특정 값에서 시작하여 왼쪽 값이 크면 그 방향으로 가고,
+                아니면 그 반대 방향으로 탐색
+                최악의 경우라면? 시작 지점에 상관없이 모든 방향으로 거처가야할 수 있음
+                그렇다면 복잡도는 O(n*m) n = m 이라면 O(n^2)
+
+                <strong>분활 정복 알고리즘</strong>
+                2차원 -> 이진 탐색을 이용해 보기
+                1. 중앙열 선택 j = m/2
+                2. 1차원의 극대 값 찾기 -> 이진 탐색 알고리즘
+                Use (i,j) as a stant to  find a 1D-peak on row
+                -> 복잡도 O(log2n) 한번 수행 했을 때 효율적이지만 제대로 작동하지 않음
+                Why? -> 그행에 존재하지 않을 수도 있음 
+                Real Algorithm -> 재귀 알고리즘 -> 중앙열 선택
+                <i>
+
+                    1. pick middle column j = m/2
+                    2. find global max on colmn j at (j,i)
+                    3. compare (i, j-1) (i,j) (i,j+1)
+                    4. pick left cols if (i,j-1) > (i,j) left similar case in right
+                    Even in fact, either of these two condition don't fire 
+                    -> (i,j) is peak 
+                    Overall, 
+                    T(n,m) = T(n,m/2) + O(n) <- max
+                    T(n,1) = O(n)이 탈출 조건
+                    T(m,m) = O(n) + .... + O(n)
+                    -> log2m번 더해진다 -> nlog2m
+                </i>
+            </pre>
+
             <h3>계산모델</h3>
             <pre>
                 dkssud
