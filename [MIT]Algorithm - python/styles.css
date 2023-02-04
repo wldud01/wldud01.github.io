@@ -75,7 +75,7 @@ main{
 
 .header_nav{
     display: flex;
-    width: 135vh;
+    width: 145vh;
     height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
