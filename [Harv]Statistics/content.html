@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Statistics - Haverd </title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!--header - navigatior -->
+    <header>
+        <nav>
+            <div class="header_title">Statistics</div>
+            <div class = "header_nav">
+                <a href="#part1">part 1 - 10</a>
+                <a href="#part10">part 10 - 20</a>
+                <a href="#part20">part 20 - 30</a>
+                <a href="#part30">part 30 - rests</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Main contents about CS50-->
+    <main>
+        <div class = "section main_part1" id="part1">
+            <head><h2>1강. Probability and Counting</h2></head>
+            <h3>확률과 셈 원리</h3>
+            <pre>
+                What reasoning you think that.
+                <strong>활용 영역</strong>
+                유전학, 물리학, 경제학, 금융, 역사학, 정치
+                인문학, 사회과학계
+                도박과 게임- 페르마 파스칼
+                인생 전반
+                통계학 -> 불확실성의 논리
+                불확실성 -> 확실
+
+                <strong>표본 공간</strong>
+                실험에 가능한 모든 결과
+                사건 -> 표본공간의 부분집합
+                벤다이어 그램 -> S : 단순한 표본 집합
+                
+                <strong>확률</strong>
+                사건: A
+                확률: P
+                P(A) ?
+                분모를 가능한 결과의 가짓수 분자를 A가 가능한 가짓수. 
+                만약 동전 2개를 던져서 어떤 사건에 대한 확률을 구한다고 할때
+                HH HT TH TT 모든 가짓수에서 특정 사건에 대한 가짓수를 분자를 두고 확률을 구한다. 
+                그런데 여기서 동전이 공정한가? 
+                순환 논리는 신경쓰지 않고 앞면과 뒷면이 나올 확률이 같다고 가정이 된다. 
+                
+                가정 > 모든 경우가 동일한 확률을 가진다 
+                가정 > 가능한 경우가 유한한 표본공간을 가진다. 
+                특정 사건에 대한 값이 정수나 실수로 존재한다.
+                그런데 분모가 만약 무한대가 된다면 분자가 의미가 없어진다.
+                띠라서 이 가정은 아주 엄격하게 적용된다. 
+
+                <strong>셈에 가장 기본적인 원리 - Counting principle</strong>
+                1. 곱의 법칙
+                특정한 실험에서 적용 n1 possible outcomes
+                second experiment each of result about first experiment n2
+                n1 n2 .... nr-1 nr (r번 실험) 
+                전체는 작은 실험들로 구성되어 있다. 
+                수형도를 그려 간단한 시각화
+                어떤 형태의 콘  W C
+                어떤 맛의 콘  1 2 34
+                6가지 종류 -> 수가 좀 더 많아진다면 이 지수함수적으로 값이 증가 -> 이진 트리
+                2. full houses
+                52개중 5개를 고르는 경우 <small>52</small>C<small>5</small>
+                3장이 같은 숫자, 나머지 두장도 같은 숫자
+                -> 완전히 카드가 섞었다고 가정했을 때,
+                3장의 7 2장의 10 
+                13개의 선택지가 있는데 3장의 7을 고름
+                카드는 전체 총 장의 7이 있음 여기서 3장을 고르는 것
+                그리고 10을 고르고 7을 제외하고 4장중 2장을 고름
+
+                
+                <strong>이항계수 - Bionomial Coefficient</strong>
+                n개 중에서 순서에 상관 없이 k를 고르는 경우, 중복이 없다고 가정,
+                n개 중에 k를 고른다고 가정했을 때,
+                식 n! / (n-k)! k! k>n인 경우 이 값을 0으로 정의(존재하는 사람보다 많을 수는 없기 때문)
+                예를 들면 n명의 사람이 있을 때 k명을  선택하는 경우
+                그런데 순서는 상관 없이 k개의 크기를 가지는 부분 집합을 선택하는 것 이다.
+                순서에 상관없이 선택을 하게 되면 k명의 사람들이 어떠한 순서로든지 선택될 수 있으며로
+                중복값을 나눠줘야한다. k!로 나누기
+
+                <strong>순서를 고려하는 경우</strong>
+                표본 집단 
+                n개 중 k개를 고른다고 적용
+                복원 -> 사람 설문조사를 동일한 사람 여러번 할 수 있음 
+                복원을 사용하는 표본 / 복원을 사용하지 않는 표본
+                
+                순서가 중요한 경우 & 순서가 중요하지 않은 경우
+                복원을 선택하면 선택하고 돌리고 선택하고 돌리고...
+                복원 o 순서 x (n+k-1)중에 k개를 고르는 경우의 수
+                복원 o 순서 o n*n*n*n*n*n... 계속 n번의 선택지가 존재하므로 단순 곱의 법칙
+                복원 x 순서 o k! n*(n-1)*(n-2)*(n-3)*(n-4)...*(n-k+1) 
+                복원 x 순서 x nCk
+                
+                
+
+
+            </pre>
+
+        </div>
+
+        <!--Top button-->
+        <div class = "pageTop">
+            <a href="#">+</a>
+        </div>
+    </main>
+  
+    <foodter>
+
+    </foodter>
+    
+</body>
+</html>

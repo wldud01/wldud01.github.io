@@ -47,6 +47,11 @@ main{
     margin-top: 5px;
 
 }
+strong{
+    font-size: 12pt;
+    background-color: rgba(0, 128, 128,0.1);
+}
+
 .header_title{
     display: flex;
     width:auto;

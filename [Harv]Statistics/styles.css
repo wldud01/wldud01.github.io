@@ -1,3 +1,9 @@
+:root{
+    --red:rgb(128 0 0 / 10%);
+    --highlight :rgb(229 206 206);
+    --highlight_strong :rgb(241, 221, 221);
+}
+
 *{
     margin: 0px;
 }
@@ -22,9 +28,13 @@ h3{
     margin:10px 10px;
     width: fit-content;
     border-radius: 5px;
-    background-color: rgb(190 217 217);
+    background-color: var(--highlight);
     color: #5a5a5a;
     padding: 4px 10px;
+}
+strong{
+    font-size: 12pt;
+    background-color: var(--highlight_strong);
 }
 
 nav{
@@ -35,7 +45,7 @@ nav{
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgba(0, 128, 128,0.1);
+    background-color: var(--red);
 }
 main{
     display: flex;
@@ -46,10 +56,6 @@ main{
     height: auto;
     margin-top: 5px;
 
-}
-strong{
-    font-size: 12pt;
-    background-color: rgba(0, 128, 128,0.1);
 }
 .header_title{
     display: flex;
@@ -79,18 +85,18 @@ strong{
 
 .header_nav{
     display: flex;
-    width: 145vh;
+    width: 140vh;
     height: auto;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .header_nav > a{
     display: block;
-    width: 100px;
+    width: 125px;
     color: black;
     padding: 10px 1.2vh;
     text-align: center;
-    font-size: 10pt;
+    font-size: 9pt;
     transition: all 1s ease-in-out;
 }
 .header_nav > a:hover{
