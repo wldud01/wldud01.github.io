@@ -147,7 +147,7 @@ main{
 }
 .dev > a{
     text-decoration: none;
-    width: 31%;
+    width: 99vh;
     height: 120px;
     display: flex;
     justify-content: center;
@@ -160,6 +160,6 @@ main{
 }
 .dev > a:hover{
     box-shadow: 3px 3px 5px rgb(224, 224, 224);
-    width: 32%;
+    width: 100vh;
     height: 125px;
 }
