@@ -123,3 +123,8 @@ strong{
     border-radius: 50%;
     background-color: rgb(190 217 217);
 }
+@media (max-width:750px){
+    .header_nav a:nth-child(3n+1){
+        display: none;
+    }
+}
