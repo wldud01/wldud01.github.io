@@ -128,3 +128,8 @@ strong{
         display: none;
     }
 }
+@media (max-width:480px){
+    .header_nav > a{
+        width: 130px;
+    }
+}

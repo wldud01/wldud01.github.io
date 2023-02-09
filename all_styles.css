@@ -163,3 +163,8 @@ main{
     width: 100vh;
     height: 125px;
 }
+@media (max-width:480px){
+    .header_nav > a{
+        width: 130px;
+    }
+}
