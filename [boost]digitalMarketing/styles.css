@@ -83,7 +83,7 @@ strong{
     width: 140vh;
     height: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .header_nav > a{
     display: block;
