@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SQL for data Analysis - boostcourse </title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!--header - navigatior -->
+    <header>
+        <nav>
+            <div class="header_title">SQL for Data Analysis</div>
+            <div class = "header_nav">
+                <a href="#part1">기본 구조</a>
+                <a href="#part2">SQL 명령어</a>
+                <a href="#part3">SQL 문법</a>
+                <a href="#part4">SQL 활용</a>
+            </div>
+        </nav>
+    </header>
+    <!-- Main contents about CS50-->
+    <main>
+        <div class = "section main_part1" id="part1">
+            <head><h2>1강. SQL 기본 구조</h2></head>
+            <h3>관계형 데이터 베이스</h3>
+            <pre>
+
+                <strong>SQL 및 데이터 베이스</strong>
+                Structured Query Language - 관계형 데이터 베이스가 이해할 수 있는 구조화된 질의어
+                웹 or 모바일 데이터 -> 관계형 데이터 베이스 -> 각자 직무에 필요한 데이터 추출해 보고서 작성
+
+                <strong>RDB - 관계형 데이터 베이스</strong>
+                행과 열로 구성된 테이블이 다른 테이블과 관계를 맺고 모여 있는 집합체 -> 관계형 데이터 베이스 저장
+
+                <strong>관계형 테이블</strong>
+                관계형 테이블 - 관계형 데이터 베이스에 저장되는 데이터 집합
+                1:1 1:N N:N
+                ex)
+                회원테이블에 회원 번호 중복 X / 회원테이블에 주문 테이블은 중복 O
+                여기서 회원 및 주문 테이블이 회원번호 기준으로 1: N 관계
+                -> 즉 회원들이 여러개의 주문이 가능하다.
+
+            </pre>
+            <h3>MySQL 및 Workbench</h3>
+            <pre>
+
+                <strong>MYSQL server</strong>
+                오픈 소스 관계형 데이터 베이스
+                Workbench - 관리 소프트웨어
+
+            </pre>
+            <h3>Workbench</h3>
+            <pre>
+
+                구성
+                데이터 베이스 관리
+                SQL 명령
+                실행 결과 출력
+                <img src="sqlOp.png" />
+                왼 -> 전체 실행
+                오 -> 커서 라인 실행
+                /*데이터 베이스 생성*/
+                CREATE DATABASE TEST;
+                
+                /*해당 데이터베이스 사용*/
+                USE TEST;
+                
+                /*데이터 베이스 삭제*/
+                DROP DATABASE TEST;
+
+                <strong>MongoDB</strong>
+
+                MongoDB는 관계형 데이터베이스가 아니다.
+                NoSQL 데이터 베이스의 한 종류 -> Document DATABASE
+                기존 데이터베이스의 문제점에서 출발했듯이 관계형 데이터베이스도 한계점이 노출되어 NoSQL 탄생.
+                NoSQL -> 탈 RDBMS 
+                <img src="Database.png" style="width: 300px; height: 200px;" />
+                키-값 : 키와 값으로 구성된 배열 구조의 데이터 베이스 NoSQL
+                도큐먼트 : 필드와 값으로 구성된 JSON format으로 관리
+                칼럼 패밀리 : 칼럼과 로우로 구성된 데이터 베이스 
+                그래프 : 노드와 관계로 구성된 데이터 베이스
+                
+                주로 정형 및 비정형 데이터나 초당 동시처리가 중요한 업무
+                로그 및 이력 등의 단순 기록형 업무에 사용된다.
+
+                성능은 클러스터 크기, 네트워크 및 어플리케이셔에 의해 성능 결정
+
+            </pre>
+            
+
+        </div>
+
+        <div class = "section main_part1" id="part2">
+            <head><h2>2강. SQL 명령어</h2></head>
+            <h3>SQL 기본 명령어</h3>
+            <pre>
+
+                <strong>분류</strong>
+                4가지
+                DDL: 데이터 정의어 - 테이블 생성 변경 삭제
+                DML: 데이터 조작어 - 데이터 삽입 조회 수정 삭제
+                DCL: 데이터 제어어 - 데이터 접근권한 부여, 제거
+                TCL: 데이터 조작어 - DML 명령어 실행, 취소, 임시저장
+
+                DBA(데이터 베이스 관리자) -> 데이터 정의어 데이터 제어어 사용
+                Data Anayst -> 데이터 조작어, 트랜젝션 제어어
+
+            </pre>
+            
+
+        </div>
+
+        <!--Top button-->
+        <div class = "pageTop">
+            <a href="#">+</a>
+        </div>
+    </main>
+  
+    <foodter>
+
+    </foodter>
+    
+</body>
+</html>
