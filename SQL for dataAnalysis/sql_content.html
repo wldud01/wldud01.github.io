@@ -106,7 +106,141 @@
 
                 DBA(데이터 베이스 관리자) -> 데이터 정의어 데이터 제어어 사용
                 Data Anayst -> 데이터 조작어, 트랜젝션 제어어
+            </pre>
 
+            <h3>데이터 정의어 DDL</h3>
+            <pre>
+                테이블 생성 변경 
+                <strong>Requirement</strong>
+                - 각 열은 반드시 한가지 데이터 타입으로 정의되어야 함
+                - 숫자형 비트 정수 소수
+                - 고정길이 문자형 가변길이 문자형
+                - 년월 시분초
+
+                <strong>테이블</strong>
+                 테이블 각 열마다 제약 조건을 정의할 수 있음
+                 종류
+                 - PK 중복되어 나타낼 수 없는 단일 값 
+                 - NOT NULL
+
+                 <strong>예시</strong>
+                 CREATE DATABASE Practice;
+                USE Practice;
+                CREATE TABLE customer(
+                userNum INT PRIMARY KEY,
+                userName VARCHAR(20),
+                Enter DATE NOT NULL,
+                agree BIT
+                );
+
+                SELECT * FROM customer;
+                ALTER TABLE customer ADD gender VARCHAR(2); /* 열 추가*/
+
+                ALTER TABLE customer MODIFY gender VARCHAR(20);
+
+                ALTER TABLE customer CHANGE gender sex VARCHAR(2);
+
+                ALTER TABLE customer RENAME userInfo;
+                SELECT * FROM userInfo;
+
+                DROP TABLE userInfo;
+
+            </pre>
+            
+            <h3>데이터 조작어 DML</h3>
+            <pre>
+                <strong>Requirement</strong>
+                데이터 삽입 조회 수정 삭제
+                primary key 제약 조건을 위반
+                not null의 제약조건 위반
+                table type 조건을 위반하는 경우
+                -> 실행 되지 않음
+
+                <strong>예제</strong>
+                INSERT INTO customer VALUE(1001, 'A', '2023-02-14', 1,'w');
+                SELECT * FROM customer;
+
+                SELECT userNum,gender FROM customer;
+                SELECT 'w' as gender FROM customer;
+
+                /*일부를 변경하게 되었을 경우에는 edit preference에서 other check 풀기*/
+                UPDATE customer SET agree = 0;
+                UPDATE customer SET agree =1 WHERE userName = 'A';
+
+                DELETE FROM customer where userName = 'A';
+                DELETE FROM customer;
+
+            </pre>
+            
+            <h3>데이터 제어어 DCL</h3>
+            <pre>
+                뎅이터 접근 구너한 부여 및 제거를 사용할 때 하는 명령
+                <img src="DCL.png" style="width:500px; height400px;"/>
+
+
+                <strong>예제 - 주로 DBA가 사용</strong>
+                /*My sql 데이터 베이스 사용*/
+                USE MYSQL;
+                /*사용자 확인*/
+                SELECT * FROM USER;
+                /*사용자 아이디 및 비밀번호 생성*/
+                CREATE USER 'TEST'@LOCALHOST IDENTIFIED BY 'TEST';
+                /*사용자 확인*/
+                SELECT * FROM USER;
+
+                SET PASSWORD FOR 'TEST'@LOCALHOST = '1234';
+                GRANT SELECT, DELETE ON practice.customer TO 'TEST'@LOCALHOST;
+                /*권한 제거*/
+                REVOKE DELETE ON practice.customer FROM 'TEST'@LOCALHOST;
+                /*모든 권한 제거*/
+                GRANT ALL ON practice.customer TO 'TEST'@LOCALHOST;
+
+                DROP USER 'TEST'@LOCALHOST;
+                SELECT * FROM USER;
+                /*권한 부여 및 제거*/
+
+            </pre>
+            
+            <h3>트랜젝션 제어어 TCL</h3>
+            <pre>
+                명령어 실행 취소 임시 저장
+                <strong>트랜젝션</strong>
+                트랜젝션 분할 할 수 없는 최소 단위
+                <img src="transaction.png" style="width:400px; height:200px"/>
+                실행 취소 실행이 모두 중요
+                
+                실행이라는 것은
+                트랜젝션 시작 -> 데이터 삽입 -> 실행
+                취소는
+                트랜젝션 시작 -> 데이터 삽입 -> 삭제
+
+                <strong>예제</strong>
+                BEGIN; /*TRANSACTION시작*/
+                COMMIT; /*TRANSACTIONT 실행*/
+                ROLLBACK /*취소 - 이전 명령어가 취소 됨*/
+
+                <strong>임시저장 save point</strong>
+                rollback 저장점을 지정하는 명령어 이다.
+                <img src="savepoint.png" style="width:400px; height:200px"/>
+                
+                <strong>예제</strong>
+                SAVEPOINT A;
+                /*A는 이름을 지정하는 것*/
+                UPDATE customer SET gender = 'm';
+                SAVEPOINT B;
+
+                DELETE FROM customer;
+                ROLLBACK TO B; 
+                /*UPDATE 지점으로 ROLLBACK*/
+
+                
+
+
+
+            </pre>
+            
+            <h3>Summary</h3>
+            <pre>
             </pre>
             
 
