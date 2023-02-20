@@ -279,8 +279,53 @@
                 디자인 적인 요소는 수많은 데이터를 다루는 회사일 수록
                 디자인 하나하나가 투자이다.
                 따라서 디자인적인 요소는 매우 중요하다.
+            </pre>
+
+            <h3>배열</h3>
+            <pre>
+                #include stdio.h 
+                const int N = 3 ; // 절대 바뀔 수 없는 전역변수
+                int main(void){
+                    int service[N];   
+                }
+
+
+                #include stdio.h 
+
+                float Avg = 0;
+                float average(int lengh, int array[]);
+                int main(void){
+                    int N;
+                    printf("Numbre of scores")
+                    scanf("%i\n",&N);
+
+                    int scores[N];
+                    for(int i = 0; i < N; i++){
+                        int score;
+    
+                        printf("%i score: ", i + 1);
+                        scores[i] = scanf("%i\n",&score);
+                    }
+                    for(int j = 0; j < N; i++){
+                        Avg += scores[j];
+                    }
+                    print("Avg : %f", Avg/N);
+                    or 
+                    print("Avg : %.1f\n", average(N,scores))
+                       
+                }
+
+                여기서 avg를 함수롤 만들면
+                float average(int length, int array[]){
+                    float sum = 0;
+                    for(int i =0; i < length; i++){
+                        sum +=array[i]
+                    }
+                    return sum / length;
+                }
 
             </pre>
+
         </div>
         <div class = "section main_algorithm" id="algorithm">
             <head><h2>4. Algorithm</h2></head>
