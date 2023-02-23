@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <link rel="stylesheet" href="../all_styles.css">
+</head>
+<body>
+    <h3>What is React</h3>
+    <pre>
+        사용자 인터페이스를 만들기 위한 라이브러리
+        라이브러리 - 자주 사용되는 기능들을 모아놓은 것
+        UI - 입출력 제어해주는 것 button.. 
+        Ngularjs  vue.js  React
+        프레임워크 제어 권한 -> 프레임워크
+        라이브러리 제어 권한 -> 개발자
+    
+        사용자와의 상호작용을 위한 인터페이스를 만들면서 관리하려고 만든
+        자바스크립트 SPA(single page application)
+
+        <strong>장점</strong>
+        빠른 업데이트와 렌더링
+        virtual DOM -> 가상의 돔 
+        DOM -> 웹페이지 정보를 가진 큰 그릇
+        즉 가상 돔은 실제 돔과 웹페이지 사이에서 그 중간 매게체 역할이라고 봄
+        최소한의 부분만 update 하기 때문에 빠름(일반은 )
+        component - based -> 블록을 조립하듯한 구조
+        componet로 아루어진 웹사이트라는 소리
+        반복적으로 사용되는 component
+
+        <strong>재사용성 </strong>
+        -> 다시 사용이 가능한 성질
+        -> 새로운 것을 계속 불러와서 사용
+        -> 호환성 문제가 없도록 개발할 수 있도록 만든다.
+        -> 그래서 API..
+        -> 리액트는 항상 쉽고 재사용성 잘 생각하기
+        -> react sponsor meta 든든
+        -> react 큰 cummity
+        -> reat React Native 모바일 앱인데 자바스크립트로 할 수 있다네요...?
+        -> 높은 상태관리 복잡도 state 아주 중요 이 역할을 하는.. 
+        -> 보통 큰 규모의 경우 redux Mobx recoil
+
+        <strong>명령어</strong>
+        npx
+        execute npm package binaries
+        -> 한번에 찾아서 처리해줌
+
+        npm application start 실행
+
+        
+
+        <!--Dom container - root dom의 시작점 -->
+        <div id="root"></div>
+        <!-- 리액트 가져오기 -->
+        <script src="https://unpkg.com/react@17.0.2/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js" crossorigin></script>
+        
+        <!-- 리액트 컴포넌트 가져오기-->
+        <script src="MyButton.js"></script>
+
+    </pre>
+
+</body>
+</html>

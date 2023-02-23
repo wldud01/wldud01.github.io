@@ -324,6 +324,34 @@
                     return sum / length;
                 }
 
+                <strong>문자열과 배열</strong>
+                int -> 4바이트를 차지하는데
+                string -> 그 string의 크기만큼 + null 종단 문자까지
+
+                null은 8비트가 모두 0인 상태 -> printf가 문자를 종단하는 원리
+
+                <strong> 명령행 인자 </strong>
+                main함수 파라미터로 argv argc 가 있음
+                argc는 입력의 개수이다
+                argv[] 입력이 포함되어 있는 배열
+                명형행에서 실행하므로 입력은 문자열을 주어진다.
+                따라서 argv[]는 string 배열
+                
+                argv[0]는 보통 프로그램의 이름이 저장되고
+                하나의 입력이 주어지면 argv[1]이 출력된다.
+                    int main(int argc, string argv[])
+                    {
+                        if (argc == 2)
+                        {
+                            printf("hello, %s\n", argv[1]);
+                        }
+                        else
+                        {
+                            printf("hello, world\n");
+                        }
+                    }
+                “./argc” -> hello world
+                “./argc David” -> hello david
             </pre>
 
         </div>
