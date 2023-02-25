@@ -275,6 +275,80 @@
         호출하는 하나의 자바스크립트 함수를 만들어 준다. 
         어떤 값을 리턴할지 등의 내용을 직접 개발자가 정함 
         --> 완전히 독립적
+
+        <strong>Event</strong>
+        어떠한 특징을 나타냄 -> 이벤트를 핸들링 한다.
+        함수 그대로 전달 -> React
+        String으로 전달 -> DOM
+        class에서?
+        EventHandler -> 사건 처리 = EventListener
+        javascript 함수들이 기본적으로 bind되지 않기 때문에 callback에서 
+        this를 사용하기 위해서는 바이딩을 해줘야함.
+        bind를 하지 않으면 this.handleClick은 global scope에서 호출 되는데, 글로벌 스콥에서는 undefined이므로 사용 불가
+        Arrow function을 사용해도 되지만() onClick에 함수를 만들어 넣는 형태) 렌더링이 추가적으로 발생하여 성능 저하 문제
+        
+        Function에서?
+        const [isToggle, setIsToggleOn] = useSate(true);
+        // 방법 1. 함수안에 함수로 정의
+        function handleClick(){
+            setIsToggleOn((isToggleOn)=> !isToggleOn);
+        }
+        //방법 2. arrow function을 사용하여 정의
+        const handleClick = () => {
+            setIsToggle((isToggle)=>!isToggleOn)
+        }
+
+        Event handler에 Argument는 어떻게 전달하는가?
+        -> 함수에 전달할 데이터 
+        -> 이벤트 핸들러에 전달해야 할 데이터
+        onClick={(event)=> this.deletItem(id,event)}
+        or
+        onClick = {this.deletItmem.bind(this, id)}
+
+
+        <strong>conditional rendering</strong>
+        조건부 렌더링
+        -> 프로그래밍 랜더링
+        return html 내부에 작성할 수도 있고 따로 조건문을 빼도 됨
+        javascript의 truthy와 falsy
+        -> true지만 true로 여겨지지 않는 값
+        ->false지만 false로 여겨지지 않는 값
+        truthy
+        true
+        {}
+        []
+        number
+        "0", "false" -> string 형태
+        falsy
+        false
+        0,-0
+        0n
+        ""
+        null
+        undefined
+        NaN
+
+        Element variable
+        외부작성
+        true&&condition
+        condition ? true:false
+        특정 컴포넌트를 보고 싶지 않으면 null을 리턴하면 됨
+        
+        <strong>map</strong>
+        map함수-> 배열의 값들을 매핑시켜줌 return  배열
+        Listkey
+        -> 어떤 값의 CRUD를 확인하기 위해 사용
+        속한 집한 내에서만 고유하면 됨
+        예를 들어 학교내에서는 학번이 중복되면 안됨
+        하지만 다른 학교 사람이랑은 중복되어도 상관 없음
+        사용법
+        li 태그를 사용한다면 그 내부에 key값을 줘서 사용
+        key ={number.toString()}
+        key={map변수.id} // 그 id 값을 사용하는 것
+        key ={map변수.index} // 현재 아이템에 index 고유한 아이디 없을때 만하세요
+        map함수 꼭 key값 넣으세요
+
+
     </pre>
 
 </body>
