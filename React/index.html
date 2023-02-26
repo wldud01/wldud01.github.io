@@ -348,6 +348,152 @@
         key ={map변수.index} // 현재 아이템에 index 고유한 아이디 없을때 만하세요
         map함수 꼭 key값 넣으세요
 
+        <strong>Form</strong>
+        HTML - element 내부의 각각의 state가 존재
+        intput textarea select 모두 자체적으로 state 관리
+        
+        React - State를 통해 관리
+        controlled Component -> 사용자 값에 접근하고 제어할 수 있도록
+        const [value setValue] = useState("");
+        const handleChange = (event) =>{
+            setvalue(event.target.value);
+        const handleSumit = (event) => {
+            alert('입력한 이름: ' +value);
+            event.preventDefault();
+        }
+        input에서 input값이 변경되었을 때 호출되는 onChange
+        handle 함수에서 새롭게 변경된 값을 저장
+        event는 event 객체를 나타냄
+        event.target은 현재 발생한 이벤트의 target을 의미
+        event.target.value는 해당 target에 input value 속성값을 의미합니다
+        즉 target은 input element가 되며
+        event.target.value는 input element의 값이 됩니다. 
+        -> 입력 양식의 초기 값을 마음데로 이용 가능
+
+        <strong>textarea</strong>
+        Html에서는 text가 children으로 들어가지만,
+        react에서는 value attribute를 이용해 관리       
+
+        <strong>Select</strong>
+        Select tag는 drop down 목록을 보여주기 위한 HTML Tag 
+        opption 제공
+        기존에는
+        <select>
+            <option selected value="apple">사과</option>
+            <option value="banana">바나나</option>
+            <option value="grape">포도</option>
+        </select>
+        * 위는 개발자 도구 참고
+        이런 식으로 되어 있지만 React에는
+        select에 value와 onChange를 넣어줌
+        만약 여러 옵션을 하고 싶다구? 그렇다면
+        select multiple ={true} value ={['B','C']} 이렇게 해주면 됩니다
+
+        만약에 input tag를 자유롭게 조정하는 식의 무언가를 만들어야 한다면
+        ReactDom.render(< input value = "hi" / >), rootNode)
+        setTimeout(fuction(){ReactDom.render(< input value ={null} />,rootNode)}, 1000)이런식으로 해주면 
+        1초 뒤에 null로 변하면서 자유롭게 입력 가능
+        요즘에는 모두 상호작용이 많으니 잘 기억해두시길..
+
+        <strong>Shared component</strong>
+        Shared state는 데이터를 여러개의 하위 컴포넌트에서 공통적으로 사용하는 경우
+        하위 컴포넌트가 부모의 공통된 component를 사용하는 것
+        하위 컴포넌트를 어떻게 상위 컴포넌트를 끌어 올릴 수 있을까
+        값을 상위 컴포넌트에서 두고 쓴다는 그런 개념
+
+        <strong>composition</strong>
+        합성이라는 뜻에 가까움
+        여러개의 compoenent를 합쳐서 만듦
+        1.containment
+        -> 담다 포함하다
+        -> 하위 컴포넌트를 포함하는 형식
+        {props.children}을 이용해서 해당 component의 하위 컴포넌트가 모두 들어옴
+        React에 내장되어 있음
+
+        <strong>specialize</strong>
+        -> 범용된 것을 좀 더 구체적으로 표현
+        Dialog -> welcomeDialog or closeDialog
+        약간 버튼같은거
+        정리해보면 일단 큰 component를 만들고나서
+        props로 전달하는 component들의 이름을 가져와서 전달을하게 되는데
+        근데 props children은 조금 더 추가적인 것들을 만들고자 한다면
+        그 component에 다른 tag들을 막 넣을 수 있음
+
+        <strong>Inheritance</strong>
+        -> 부모를 상속받아서 새로운 component를 만들 수 있음. 
+        -> 굳이 싶다고 함
+        -> 복잡한 컴포넌트를 쪼개서 여러개의 컴포넌트로 만들고,
+        만든 컴포넌트들을 조합해서 새로운 컴포넌트들을 만들자
+
+        <strong>context</strong>
+        -> 데이터가 컴포넌트의 props 단방향 전송
+        -> 자주 사용되는 data까지 그러면 복잡 그잡채..
+        그래서 곧바로 component tree로 곧바로 전송하는 것
+        이제까지 실습한 방식이 단방향
+        context를 이용하면 데이터를 한곳에서 관리해서 바로 compoent 접근 가능 
+        캐싱데이터,지역 날씨,로그인 여부, 로그인 정보, UI 테마, 현재 언어등... 
+        그런데 너무 많이 사용하면, 재사용성이 떨어지기 때문에 많이 많이 반복되는 것만 사용해야한다
+
+        context이전에 대안으로는 상위 변수로 빼는 것이다
+        예를 들어,
+        const user = props.user;
+
+        const userLink =(
+            가장 하위 단계 component 빼서 쓴 component 부분
+        );
+        그럼 아래 userLink에 변수로 계속 전달하면 됨
+        그런데 너무 상위 컴포넌트에만도 주면 안됨..
+        그럼 변수 여러개로 크게 나누세요~
+
+        사용법
+        React.createContext(기본값) 사용
+        상위레벨에 Provider가 없으면 기본값을 이용해야함
+        povider에 value가 있고 이 value로 하위한테 다 전달함. 
+        하위 컴포넌트들은 consuming component라고 함 그리고 값이 바뀌면 재 렌더링, 중첩사용 가능
+        주의 사항
+        - reference 상황을 고려하기 때문에  Provider가 재 렌더링될 때마다 모든 하위 consumer가 모두 재렌더링 됨
+        그니까 value에서 값을 바꿔주면 안되고 state를 이용해서 값을 바꾸고 그 값을 넣어준다.
+
+        consumer표시를 하면 < Mycontext.Consumer >와 같이 하면 Context를 구독했다고 생각하면 됨
+        그럼 컨텍스트의 값에 따라서 컴포넌트들을 렌더링 함
+
+        <strong>function as a child</strong>
+        // children이라는 prop을 직접 선언
+        < Profile children ={name => 태그 {name} /태그</Profile>} />
+        // profile 컴포넌트로 감싸서 children을 만드는 방식
+        < profile >{name => 태그 {name} /태그}  < /profile >
+
+        그럼 context를 중첩해서 사용하려면? 중첩해서 사용
+        <img src="context.png" style="width:200px; height:100px;" />
+
+        아니면 hook으로 사용하기 useContext()
+        -> 무거운 작업인 경우 최적화 필요
+        -> 그리고 반드시 객체를 넣어주어야함 MyContext.Consumer를 넣어주면 안됨
+
+
+        <strong>CSS</strong>
+        React에서 CSS 방법은 거의 유사하나 한가지 방법이 더 있음
+        바로 styled component이다..
+
+        tagged template literal
+        literal 이것이 무엇이냐?
+        바로 자바스크립트에 등장하는 문법이다
+        literal -> 소스코드에 고정된값 변수 선언할때 오른쪽 값
+        template literal
+        untagged와 tagged가 있음
+        const Wrapper = styled.div`
+            padding:1em;
+            background: grey;
+        `
+        이런 식으로 쓰임 그럼 return 할때 wrapper을 태그로 쓰면 적용된 component가 만들어짐
+        propsfheh tkdyd rksmdgka color: ${props =>props.dark? :}
+        이런 코드를 넣어주면 되는데 그럼 태그 안에 props 값만 넣어주면됨
+        < button dark >Dark< / button > 이런식으로
+        
+        만약 만든 코드를 확장하고 싶니..? 그렇다면 styled.button 대신
+        style(Button)`블라 블라` 이런식으로 이미 만든 Button styled component를 만들어 주면 됨
+
+
 
     </pre>
 
